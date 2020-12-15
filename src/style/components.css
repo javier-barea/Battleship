@@ -1,0 +1,484 @@
+#wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    background-color: #182025;
+    color: #ec8d2e;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+.header_title {
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #ec8d2e;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+.top-level-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles for top-level component */
+.top-level-component .game-boards-container {
+    display: flex;
+}
+
+.top-level-component .game-boards-container .game-board {
+    margin-right: 50px;
+}
+
+.game-board-component .grid-container .grid-row {
+    display: flex;
+}
+
+.game-board-component .grid-container .grid-row .label {
+    margin-right: 5px;
+    padding-top: 10px;
+}
+
+.btn_container{
+    letter-spacing: 0.08em;
+    margin-top: 100px;
+    padding:0;
+    text-align: center;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    overflow: hidden;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 0 20px rgba(5, 5, 5, 5);
+}
+
+.btn {
+    border: 1px solid #204a61;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #204a61;
+    z-index: -1;
+    transition: 0.8s;
+}
+
+.btn1,.btn2 {
+    color: #204a61;
+}
+
+.btn3,.btn4 {
+    color: #fff;
+}
+
+.btn1:hover,.btn2:hover {
+    color: #fff;
+}
+
+.btn3:hover,.btn4:hover {
+    color: #204a61;
+}
+
+.btn1::before,.btn3::before {
+    top: 0;
+    border-radius: 0 0 50% 50%;
+}
+
+.btn2::before,.btn4::before {
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+}
+
+.btn3::before,.btn4::before {
+    height: 180%;
+}
+
+.btn1:hover::before,.btn2:hover::before {
+    height: 180%;
+}
+
+.btn3:hover::before,.btn4:hover::before {
+    height: 0%;
+}
+
+.github {
+    color: #204a61;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+.github:hover {
+    color: #fff;
+}
+
+.github::before {
+    top: 0;
+    border-radius: 0 0 50% 50%;
+}
+
+.github:hover::before {
+    height: 180%;
+}
+
+.buttonTest {
+    display: inline-flex;
+    height: 40px;
+    width: 150px;
+    border: 2px solid #BFC0C0;
+    margin: 20px 20px 20px 20px;
+    color: #BFC0C0;
+    /*text-transform: uppercase;*/
+    text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 0 20px rgba(5, 5, 5, 5);
+}
+
+a {
+    color: #BFC0C0;
+    text-decoration: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+#buttonOption2 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#buttonOption2 a {
+    position: relative;
+    left: 0;
+    transition: all .35s ease-Out;
+    cursor: pointer;
+}
+
+#dub-arrow {
+    width: 100%;
+    height: 100%;
+    background: #BFC0C0;
+    left: -200px;
+    position: absolute;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .35s ease-Out;
+    bottom: 0;
+    cursor: pointer;
+}
+
+#buttonOption2 img {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+}
+
+#buttonOption2:hover #dub-arrow {
+    left: 0;
+    cursor: pointer;
+}
+
+#buttonOption2:hover a {
+    left: 150px;
+    cursor: pointer;
+}
+
+@media screen and (min-width:1000px) {
+    h1 {
+        font-size: 2.2em;
+    }
+    #container {
+        width: 50%;
+    }
+}
+
+/*.shipBtn{
+  background-color: #327da8;
+  color: white;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}*/
+
+/*.shipBtn1 {
+    border: 1px solid #3498db;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}*/
+
+/* Styles for the various grid cell states. */
+
+.game-board-cell-component {
+    width: 40px;
+    height: 40px;
+    border: 1px solid grey;
+}
+
+.game-board-cell-component.available {
+    background: #327da8;
+}
+
+.game-board-cell-component.available:hover {
+    background: #3261a8;
+}
+
+.game-board-cell-component.disabled {
+    background: #cccccc;
+}
+
+.game-board-cell-component.disabled:hover {
+    background: #bbbbbb;
+}
+
+.game-board-cell-component.ship {
+    background: #414141;
+}
+
+.game-board-cell-component.damaged {
+    background: #dd0000;
+}
+
+.game-board-cell-component.sunk {
+    background: #000000;
+}
+
+.game-board-cell-component.missed {
+    background: #ffbbbb;
+}
+
+.game-board-cell-component.ghost {
+    background: #507090;
+}
+
+.column_labels {
+    display: flex;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.column_labels .label {
+    width: 42px;
+    text-align: center;
+}
+
+h1 {
+    text-align:center;
+}
+
+p {
+    text-align: center;
+}
+
+.top-level-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.top-level-component .instructions {
+    margin: 20px;
+}
+
+/*******************************************
+************** SCOREBOARD CSS **************
+********************************************/
+
+.app-scoreboard-component {
+
+}
+
+.scoreboard_table {
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    font-size: 0.9em;
+    min-width: 400px;
+    font-weight: bold;
+    border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(5, 5, 5, 5);
+}
+
+.scoreboard_table_header {
+    padding: 30px;
+    background-color: #204a61;
+    color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+    font-size: 17px;
+}
+
+.scoreboard_header_playerScoreProgress {
+    border-collapse: collapse;
+    padding: 15px;
+    border-bottom: 1px solid #dddddd;
+    background-color: #f3f3f3;
+    color: #204a61;
+}
+
+.scoreboard_scoreProgress {
+    border-collapse: collapse;
+    padding: 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.scoreboard_player {
+    border-collapse: collapse;
+    padding: 15px;
+    color: #ffffff;
+}
+
+.scoreboard_lastRow {
+    border-collapse: collapse;
+    padding: 15px;
+    border-bottom: 10px solid #182025;
+}
+
+.scoreboard_data {
+    border-collapse: collapse;
+    padding: 15px;
+}
+
+.scoreboard_data_value {
+    border-collapse: collapse;
+    padding: 15px;
+    color: #ffffff;
+}
+
+/*******************************************
+************** END SCOREBOARD CSS **************
+********************************************/
+
+.game-player-change-container, .game-choose-ships-container {
+    height: calc(40px * 9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.playerBtn {
+    background-color: #327da8;
+    color: white;
+    padding: 5px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+.fleet-label {
+    text-align: center;
+    margin: 20px;
+}
+
+/********** HR LINES************
+********************************/
+
+.separator {
+    border: 0;
+}
+
+.separator--line {
+    border: 0;
+    border-bottom: 5px solid #ec8d2e;
+    width: 0;
+    -webkit-animation: separator-width 1s ease-out forwards;
+    animation: separator-width 1s ease-out forwards;
+}
+
+@-webkit-keyframes separator-width {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes separator-width {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes dot-move-right {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 32px;
+    }
+}
+
+@keyframes dot-move-right {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 32px;
+    }
+}
+@-webkit-keyframes dot-move-left {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -32px;
+    }
+}
+@keyframes dot-move-left {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -32px;
+    }
+}
+.separator--dotter {
+    border: 0;
+    border-bottom: 5px dotted #ec8d2e;
+    width: 0;
+    -webkit-animation: separator-width 1.5s ease-out forwards;
+    animation: separator-width 1.5s ease-out forwards;
+}
+
+/********** END OF HR LINES************
+***************************************/
+
+.instructions {
+    font-size: 1.3em;
+}
